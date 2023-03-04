@@ -31,11 +31,9 @@ lazy-object-proxy==1.7.1
 mccabe==0.6.1
 parso==0.7.1
 Pillow==9.3.0
-platformdirs==2.4.1
 pluggy==1.0.0
 psycopg==3.0.8
 psycopg2==2.9.5
-psycopg2-binary==2.9.5
 pycodestyle==2.6.0
 pydocstyle==6.1.1
 pyflakes==2.2.0
