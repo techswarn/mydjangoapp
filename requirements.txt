@@ -45,7 +45,6 @@ requests==2.27.1
 rope==0.22.0
 six==1.16.0
 snowballstemmer==2.2.0
-sqlparse==0.4.2
 toml==0.10.2
 ua-parser==0.10.0
 ujson==5.6.0
