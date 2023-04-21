@@ -14,6 +14,8 @@ env = environ.Env()
 environ.Env.read_env()
 
 print(os.getenv('TEST_ENV'))
+print(os.getenv('DATABASE_URL'))
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
