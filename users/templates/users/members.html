@@ -1,8 +1,7 @@
 {% if user.is_authenticated %}
     <div class="alert alert-success" role="alert">
-        <h3>Welcome {{ user.username }}!</h3>
-        <a href="{% url 'members' %}">members</a>
-        <a href="{% url 'logout' %}">Logout?</a>
+        <h3>{{ user.username }}!</h3>
+        <h2>List of members</h2>
     </div>
 {% else %}
     <div class="alert alert-success" role="alert">
