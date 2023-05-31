@@ -2,9 +2,15 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from django.contrib import messages
 from .forms import UserRegistrationForm
+from django.contrib.auth.decorators import login_required
 
 def home(request):
     return render(request, 'users/home.html')
+
+
+def members(request):
+    return render(request, 'users/members.html')
+@login_required(login_url='users/members')
 
 def register(request):
     if request.method == 'POST':
