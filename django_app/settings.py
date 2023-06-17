@@ -30,8 +30,8 @@ print(BASE_DIR)
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False") == "false"
-# DEBUG = "True"
+# DEBUG = os.getenv("DEBUG", "False") == "false"
+DEBUG = os.getenv("DEBUG")
 print(DEBUG)
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
@@ -134,13 +134,14 @@ USE_L10N = True
 
 USE_TZ = True
 
-# Base url to serve media files
-MEDIA_URL = '/media/'
+
 
 # # Path where media is stored'
 # MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT  = os.path.join(BASE_DIR, 'media')
+# Base url to serve media files
+MEDIA_URL = '/media/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 print(BASE_DIR)
 
 # Static files (CSS, JavaScript, Images)
