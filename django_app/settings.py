@@ -17,8 +17,10 @@ print(os.getenv('TEST_ENV'))
 print(os.getenv('DATABASE_URL'))
 
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+print(BASE_DIR)
 
 
 # Quick-start development settings - unsuitable for production
@@ -29,6 +31,8 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False") == "false"
+# DEBUG = "True"
+print(DEBUG)
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
@@ -130,13 +134,20 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Base url to serve media files
+MEDIA_URL = '/media/'
+
+# # Path where media is stored'
+# MEDIA_ROOT = BASE_DIR / 'media'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+print(BASE_DIR)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
-
 
 # Uncomment if you have extra static files and a directory in your GitHub repo.
 # If you don't have this directory and have this uncommented your build will fail
