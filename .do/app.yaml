@@ -1,0 +1,54 @@
+alerts:
+  - rule: DEPLOYMENT_FAILED
+  - rule: DOMAIN_FAILED
+databases:
+  - cluster_name: db-postgresql-blr1-new
+    db_name: dbdjango
+    db_user: admin
+    engine: PG
+    name: db-postgresql-blr1-new
+    production: true
+    size: professional-xs
+    version: "14"
+envs:
+  - key: TEST_ENV
+    scope: RUN_AND_BUILD_TIME
+    value: prod
+ingress:
+  rules:
+    - component:
+        name: mydjangoapp
+      match:
+        path:
+          prefix: /
+name: django
+region: blr
+services:
+  - environment_slug: python
+    envs:
+      - key: DATABASE_URL
+        scope: RUN_TIME
+        value: ${db-postgresql-blr1-new.DATABASE_URL}
+      - key: DJANGO_ALLOWED_HOSTS
+        scope: RUN_AND_BUILD_TIME
+        value: ${APP_DOMAIN}
+      - key: DEBUG
+        scope: RUN_AND_BUILD_TIME
+        value: "false"
+      - key: DJANGO_SECRET_KEY
+        scope: RUN_AND_BUILD_TIME
+        type: SECRET
+        value: EV[1:fUfCpcxxeIKKczLZYnLPBrHAUU91ZddH:MkqHKaF6Vvc8CHwGbdorIoPq+vfuC0bR0c2gnA==]
+      - key: DEVELOPMENT_MODE
+        scope: RUN_AND_BUILD_TIME
+        value: "False"
+    github:
+      branch: main
+      deploy_on_push: true
+      repo: techswarn/mydjangoapp
+    http_port: 8080
+    instance_count: 2
+    instance_size_slug: professional-xs
+    name: mydjangoapp
+    run_command: gunicorn --worker-tmp-dir /dev/shm django_app.wsgi
+    source_dir: /
