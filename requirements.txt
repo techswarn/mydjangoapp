@@ -1,5 +1,6 @@
 asgiref==3.6.0
 toolbox @ git+https://github.com/techswarn/toolbox
+pythonutils @ git+https://github.com/techswarn/pythonutils
 beautifulsoup4==4.11.1
 bs4==0.0.1
 distlib==0.3.6
