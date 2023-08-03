@@ -1,13 +1,43 @@
-{% if user.is_authenticated %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <link rel="stylesheet" href="{% static 'css/myglobal.css' %}" />
+  <body>
+    {% if user.is_authenticated %}
     <div class="alert alert-success" role="alert">
-        <h3>Welcome {{ user.username }}!</h3>
-        <a href="{% url 'members' %}">members</a>
-        <a href="{% url 'logout' %}">Logout?</a>
+      <h3>Welcome {{ user.username }}!</h3>
+      <a href="{% url 'members' %}">members</a>
+      <a href="{% url 'logout' %}">Logout?</a>
     </div>
-{% else %}
-    <div class="alert alert-success" role="alert">
-        <h3>Welcome!</h3>
-        <a href="{% url 'register' %}">Signup</a>
-        <a href="{% url 'login' %}">Login</a>
+    {% else %}
+
+    <div class="container">
+      <div class="header">
+        <div class="navbar">
+          <div class="logo">Sample Django</div>
+          <ul class="nav-items">
+            <li class="nav-item">About us</li>
+            <li class="nav-item">Contact us</li>
+            <li class="nav-item">help</li>
+          </ul>
+        </div>
+      </div>
+      <div class="section-main">
+        <div class="hero">
+          <img class="hero-image" src="./../../../media/hero.jpg" alt="hero" />
+        </div>
+        <div class="login-card">
+          <div class="card">
+            <h3>Welcome!</h3>
+            <a href="{% url 'register' %}">Signup</a>
+            <a href="{% url 'login' %}">Login</a>
+          </div>
+        </div>
+      </div>
     </div>
-{% endif %}
+    {% endif %}
+  </body>
+</html>
