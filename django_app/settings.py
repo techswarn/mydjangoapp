@@ -147,7 +147,7 @@ print(BASE_DIR)
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = "https://django-ggbim.ondigitalocean.app/"
+STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # Uncomment if you have extra static files and a directory in your GitHub repo.
