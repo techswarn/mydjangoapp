@@ -15,7 +15,6 @@ soupsieve==2.3.2.post1
 sqlparse==0.4.3
 srvlookup==3.0.0
 virtualenv==20.16.4
-whitenoise==6.2.0
 astroid==2.9.3
 autopep8==1.5.5
 certifi==2021.10.8
