@@ -30,8 +30,9 @@ print(BASE_DIR)
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = os.getenv("DEBUG", "False") == "false"
-DEBUG = os.getenv("DEBUG")
+#DEBUG = os.getenv("DEBUG", "False") == "true"
+#DEBUG = os.getenv("DEBUG")
+DEBUG = False
 print(DEBUG)
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
