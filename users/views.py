@@ -5,6 +5,9 @@ from .forms import UserRegistrationForm
 from django.contrib.auth.decorators import login_required
 
 def home(request):
+    print("start here")
+    print(request.headers)
+    print("end here")
     return render(request, 'users/home.html')
 
 
