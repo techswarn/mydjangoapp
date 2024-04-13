@@ -3,7 +3,7 @@ from datetime import date
 
 class Member(models.Model):
   firstname = models.CharField(max_length=255)
-  oldemail= models.CharField(default='s.swarn619@gmail.com', max_length=255)
+  email= models.CharField(default='s.swarn619@gmail.com', max_length=255)
   lastname = models.CharField(max_length=255)
   phone = models.IntegerField(null=True)
   pincode = models.IntegerField(null=True)
