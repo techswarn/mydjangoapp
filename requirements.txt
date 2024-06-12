@@ -52,3 +52,4 @@ urllib3==1.26.8
 user-agents==2.2.0
 wrapt==1.13.3
 yapf==0.32.0
+SQLAlchemy==2.0.30
