@@ -9,5 +9,5 @@ class Question(models.Model):
 class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     choice_text = models.CharField(max_length=200)
-    newchecked = models.BooleanField(default=False)
+    checked = models.BooleanField(default=False)
     votes = models.IntegerField(default=0)
