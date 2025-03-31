@@ -3,6 +3,7 @@ from datetime import date
 
 class Member(models.Model):
   firstname = models.CharField(max_length=255)
+  username = models.CharField(max_length=255)
   lastname = models.CharField(max_length=255)
   phone = models.IntegerField(null=True)
   pincode = models.IntegerField(null=True)
